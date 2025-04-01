@@ -10,7 +10,23 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-    res.json({ "message": "Server is up and running" })
+
+    const a = 2;
+    const b = 6;
+
+    const minValue = Math.min(a, b)
+    const maxValue = Math.max(a, b)
+
+    const floor = Math.floor(1.73)
+    const round = Math.round(1.53)
+    const sqrt = Math.sqrt(9)
+    const pow = Math.pow(3, 3)
+    console.log(3 ^ 2)
+    console.log(3 ^ 3)
+
+
+
+    res.json({ message: "Server is up and running", minValue, maxValue, floor, round, sqrt, pow })
 })
 
 
