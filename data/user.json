@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "username": "alicej",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "Bob Smith",
+        "email": "bob.smith@example.com",
+        "username": "bobsmith",
+        "role": "editor"
+    },
+    {
+        "id": 3,
+        "name": "Charlie Davis",
+        "email": "charlie.davis@example.com",
+        "username": "charlied",
+        "role": "viewer"
+    },
+    {
+        "id": 4,
+        "name": "Diana Prince",
+        "email": "diana.prince@example.com",
+        "username": "wonderwoman",
+        "role": "admin"
+    },
+    {
+        "id": 5,
+        "name": "Ethan Hunt",
+        "email": "ethan.hunt@example.com",
+        "username": "ethanh",
+        "role": "editor"
+    },
+    {
+        "id": 6,
+        "name": "Fiona Gallagher",
+        "email": "fiona.g@example.com",
+        "username": "fionag",
+        "role": "viewer"
+    },
+    {
+        "id": 7,
+        "name": "George Martin",
+        "email": "george.martin@example.com",
+        "username": "gmartin",
+        "role": "editor"
+    },
+    {
+        "id": 8,
+        "name": "Hannah Lee",
+        "email": "hannah.lee@example.com",
+        "username": "hlee",
+        "role": "viewer"
+    },
+    {
+        "id": 9,
+        "name": "Ian Wright",
+        "email": "ian.wright@example.com",
+        "username": "ianw",
+        "role": "admin"
+    },
+    {
+        "id": 10,
+        "name": "Julia Roberts",
+        "email": "julia.roberts@example.com",
+        "username": "juliar",
+        "role": "editor"
+    }
+]
