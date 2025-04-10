@@ -109,8 +109,10 @@ app.put('/user/update/:id', async (req, res) => {
 })
 
 
-
-app.delete('/user/delete/:id', async (req, res) => {
+// Route 
+app.delete('/user/delete/:id', DeleteUser)
+// Controller
+const DeleteUser = async (req, res) => {
 
     try {
         // Getting User id from 'body'
@@ -131,9 +133,7 @@ app.delete('/user/delete/:id', async (req, res) => {
         console.log(error)
         res.status(500).json({ error: "Internal Server Error" })
     }
-})
-
-
+}
 
 
 
