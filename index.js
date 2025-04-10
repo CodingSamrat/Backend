@@ -40,6 +40,16 @@ app.get('/', (req, res) => {
 
 app.get('/user', async (req, res) => {
     try {
+
+        // Sending data to a get method
+        // Dynamic Route (req.params.id)
+        // /user/update/:id
+        // http://127.0.0.1:5000/user/update/782323
+
+
+        // Query Parameter / Search Parameter -> (req.query) 
+        // http://127.0.0.1:5000/user/update?id=23
+
         const users = JSON.parse(fs.readFileSync('data/user.json', 'utf-8'))
 
         res.json({ message: "All Users Fetched", users })
@@ -57,16 +67,73 @@ app.get('/user', async (req, res) => {
 app.post('/user/create', async (req, res) => {
 
     try {
-        const body = req.body
-        console.log(body)
+        const { name, email, age } = req.body
 
-        res.status(200).json({ message: "New User Created", user: body })
+        // console.log(req)
+        console.log(name, email, age)
+
+        res.status(200).json({ message: "New User Created", })
     }
     catch (error) {
         console.log(error)
         res.status(500).json({ error: "Internal Server Error" })
     }
 })
+
+
+
+
+
+
+app.put('/user/update/:id', async (req, res) => {
+
+    try {
+        // Getting User id from 'body'
+        // const { name, email } = req.body
+
+        // 'Search Params / Query'
+        // http://127.0.0.1:5000/user/update?id=23
+        // const { id } = req.query
+
+        // Dynamic Route (req.params.id)
+        // Getting User id from 'Params'
+        const { id } = req.params
+
+
+        res.status(200).json({ message: "User Updated", id })
+    }
+    catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Internal Server Error" })
+    }
+})
+
+
+
+app.delete('/user/delete/:id', async (req, res) => {
+
+    try {
+        // Getting User id from 'body'
+        // const { id } = req.body
+
+        // 'Search Params / Query'
+        // http://127.0.0.1:5000/user/update?id=23
+        // const { id } = req.query
+
+        // Dynamic Route (req.params.id)
+        // Getting User id from 'Params'
+        const { id } = req.params
+
+
+        res.status(200).json({ message: "User Deleted", id })
+    }
+    catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Internal Server Error" })
+    }
+})
+
+
 
 
 
@@ -81,6 +148,24 @@ app.listen(PORT, () => {
 
 
 
-// GET, POST
+// GET, POST, PUT, DELETE
 // async-await
 // try-catch
+
+
+// .........................
+// CURD Operation
+// C -> Create
+// U -> Update/Edit
+// R -> Read/Get/Fetch
+// D -> Delete
+
+
+
+// ...
+// Routes .................
+// Get all user     (R)
+// Get User By Id   (R)
+// Create User      (C)
+// Update User      (U)
+// Delete User      (D)
