@@ -1,4 +1,5 @@
 import express from 'express'
+import { UserModel } from '../models/user.model.js'
 
 /**
  * Creating new user
@@ -8,8 +9,19 @@ import express from 'express'
  * @param {express.Response} res 
  */
 export async function CreateUser(req, res) {
-    const body = req.body
-    res.status(200).json({ message: "User Created", body })
+    const { name, roll, course } = req.body
+
+    // Validate params 
+    if (!name || !roll || !course) {
+        return res.status(403).json({ error: "Missing required parameters" })
+    }
+
+
+    // Creating user doc to database
+    const user = await UserModel.create({ name, roll, course })
+
+    // Sending success response to client
+    res.status(200).json({ message: "User Created", user })
 }
 
 export async function GetAllUser(req, res) {
@@ -17,7 +29,7 @@ export async function GetAllUser(req, res) {
 }
 
 export async function GetUserById(req, res) {
-
+    // userId = req.body.id
 }
 
 export async function UpdateUser(req, res) {

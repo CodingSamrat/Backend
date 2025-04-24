@@ -1,9 +1,15 @@
 import express from 'express'
 import { UserRouter } from './routes/user.route.js'
 import { ProductRouter } from './routes/product.route.js'
+import { config } from 'dotenv'
+import { DatabaseConfig } from './configs/mongoose.config.js';
+
+config();
 
 const app = express()
-const PORT = 5000
+const PORT = process.env.PROT
+
+DatabaseConfig()
 
 // Middleware -- 
 app.use(express.json())
